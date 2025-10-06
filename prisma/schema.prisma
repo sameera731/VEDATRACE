@@ -31,6 +31,7 @@ model Harvest {
   date_of_sending_harvest DateTime? @db.Date
   Batch_id           String   @unique @db.Uuid
   cid_of_harvest     String?  @db.VarChar(255)
+  transactionHash  String? // <-- ADD THIS LINE
   city               String?  @db.VarChar(100)
   state              String?  @db.VarChar(100)
 

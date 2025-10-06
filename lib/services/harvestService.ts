@@ -1,5 +1,8 @@
+// lib/services/harvestService.ts
+
 import { prisma } from "@/lib/prisma";
 import { uploadToIPFS } from "@/lib/ipfs";
+import { submitBatchToBlockchain } from "@/lib/blockchain"; // <-- Import the new function
 
 export const harvestService = {
   async findByFarmer(userName: string) {
@@ -10,7 +13,7 @@ export const harvestService = {
   },
 
   async create(data: any, user: any) {
-    // Insert into DB first
+    // 1. Insert into DB first
     const batchId = crypto.randomUUID();
     const city = user.City || user.city || null;
     const state = user.state || null;
@@ -33,19 +36,28 @@ export const harvestService = {
       },
     });
 
-    // Upload to IPFS
-    const ipfsData = {
-      ...harvest,
-      city,
-      state,
-    };
+    // 2. Upload to IPFS
+    const ipfsData = { ...harvest, city, state };
     const cid = await uploadToIPFS(ipfsData);
 
-    // Update harvest with CID
-    const updatedHarvest = await prisma.harvest.update({
+    // 3. Update harvest with CID
+    const updatedHarvestWithCid = await prisma.harvest.update({
       where: { Harvest_id: harvest.Harvest_id },
       data: { cid_of_harvest: cid },
     });
-    return updatedHarvest;
+
+    // 4. Call the new blockchain service function
+    const transactionHash = await submitBatchToBlockchain(
+      parseInt(updatedHarvestWithCid.Harvest_id),
+      updatedHarvestWithCid.cid_of_harvest!
+    );
+
+    // 5. Save the transaction hash to the database
+    const finalHarvest = await prisma.harvest.update({
+        where: { Harvest_id: updatedHarvestWithCid.Harvest_id }, // <-- THE FIX IS HERE
+        data: { transactionHash: transactionHash }
+    });
+
+    return finalHarvest;
   },
 };

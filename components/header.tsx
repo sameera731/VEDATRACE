@@ -28,13 +28,28 @@ export function Header() {
       href: "/about",
     },
     {
-      en: "For Farmers",
-      hi: "किसानों के लिए",
+      en: "Farmers",
+      hi: "किसान",
       href: "/farmers",
     },
     {
-      en: "For Consumers",
-      hi: "उपभोक्ताओं के लिए",
+      en: "Lab",
+      hi: "परीक्षक",
+      href: "/farmers",
+    },
+    {
+      en: "Processing",
+      hi: " प्रसंस्कर्ता",
+      href: "/farmers",
+    },
+    {
+      en: "Manufacturing",
+      hi: "निर्माता",
+      href: "/farmers",
+    },
+    {
+      en: "Consumers",
+      hi: "उपभोक्ता",
       href: "/consumers",
     },
     {
