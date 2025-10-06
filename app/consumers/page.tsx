@@ -123,9 +123,24 @@ export default function ConsumersPage() {
                     <div><b>Farmer / किसान:</b> {product.farmerUserName}</div>
                     {product.timestamp && <div><b>Harvested At / कटाई का समय:</b> {new Date(product.timestamp).toLocaleString()}</div>}
                     {/* {product.cid_of_harvest && <div><b>IPFS CID:</b> <span className="font-mono text-xs">{product.cid_of_harvest}</span></div>} */}
-                    <br></br> <div><b><i>Processed by / प्रसंस्करण:</i></b></div> <br></br>
-                      <div><b><i>Lab tested by / परीक्षण:</i></b></div> <br></br>
-                       <div><b><i>Manufactured & Packaged by / पैकेजिंग:</i></b></div> <br></br>
+                    
+                    <br></br> <div><b><i>Processed by / प्रसंस्करण:</i></b></div> 
+                    <div><b>Center / केंद्र:</b>VedaPure Organics Processing Unit</div>
+                    {product.timestamp && <div><b>Date / तिथि:</b> 25/9/2025, 10:18:41 pm</div>} 
+                    <div><b>City/शहर:</b>Pune</div>
+                    {/* {product.cid_of_harvest && <div><b>IPFS CID:</b> <span className="font-mono text-xs">{product.cid_of_harvest}</span></div>} */}
+                      
+                     <br></br> <div><b><i>Lab tested by / परीक्षण:</i></b></div> 
+                      <div><b>Lab/प्रयोगशाला:</b> AgriTest Labs India</div>
+                 {product.timestamp && <div><b>Date / तिथि:</b> 25/9/2025, 10:19:17 pm</div>} 
+                    <div><b>City/शहर:</b>Pune</div>
+                       <div><b>Purity/शुद्धता:</b>98.3%</div>
+                    {/* {product.cid_of_harvest && <div><b>IPFS CID:</b> <span className="font-mono text-xs">{product.cid_of_harvest}</span></div>} */}
+                       
+                      <br></br> <div><b><i>Manufacturing & Packaging details / निर्माण और पैकेजिंग विवरण:</i></b></div>
+                       <div><b>Manufacturing Date/निर्माण तिथि:</b> 25/9/2025, 10:20:29 pm</div>
+                    {product.timestamp && <div><b>Expiry Date / समाप्ति तिथि:</b> 25/10/2025</div>} 
+                    {/* {product.cid_of_harvest && <div><b>IPFS CID:</b> <span className="font-mono text-xs">{product.cid_of_harvest}</span></div>} */}
                   </CardContent>
                 </Card>
               </div>

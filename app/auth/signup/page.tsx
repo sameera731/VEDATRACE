@@ -64,7 +64,10 @@ export default function SignupPage() {
           <select name="User_type" required onChange={handleChange} className="border p-2 col-span-2">
             <option value="">Select Role / भूमिका चुनें</option>
             <option value="Farmer">Farmer / किसान</option>
-            <option value="Consumer">Consumer / उपभोक्ता</option>
+         <option value="Processor">Processor / प्रोसेसर</option>
+            <option value="Tester">Tester / परीक्षक</option>
+            <option value="Manufacturer">Manufacturer / निर्माता</option>
+               <option value="Consumer">Consumer / उपभोक्ता</option>
           </select>
           <input type="password" name="password" placeholder="Password / पासवर्ड" required onChange={handleChange} className="border p-2 col-span-2" />
           <button type="submit" className="bg-green-700 text-white py-2 px-4 rounded col-span-2">
