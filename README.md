@@ -3,6 +3,14 @@ ISIH-2025 AstraX
 
 VEDATRACE is a blockchain herb traceability platform built to trace the lifecycle of Ayurvedic and herbal products — from the farm to the consumer.
 
+## About VEDATRACE :
+Vedatrace ensures end to end traceability of medicinal herbs from geo-tagged collection points to final formulation labels offering full transparency to both regulators and consumers.
+• 🌿 Farmer logs geo-tagged harvest data as the first entry in the traceability chain.
+• 🔬 Processing & Lab Testing steps are digitally signed; reports stored on IPFS.
+• 🏭 Manufacturing links final product to the original batch, entire history anchored on Polygon blockchain.
+• 📱 Consumer scans QR code to access the full, verified journey from farm to shelf.
+
+
 ---
 
 ## Tech Stack
