@@ -34,7 +34,7 @@ Vedatrace ensures end to end traceability of medicinal herbs from geo-tagged col
 ### 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/Parshv-sudo/VEDATRACE.git
+git clone https://github.com/sameera731/VEDATRACE.git
 cd VEDATRACE
 ```
 Make your .env file by following the .env.example file.
